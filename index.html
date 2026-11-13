@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE LEGACY | Exploración espacial</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+    <!-- Menú principal -->
+    <header class="navbar">
+        <a href="#inicio" class="logo">SPACE <span>LEGACY</span></a>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#moon">Luna</a>
+            <a href="#mars">Marte</a>
+            <a href="#equipment">Equipos</a>
+            <a href="#juego">Juego</a>
+            <a href="#mision">Misión</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Portada -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <p class="etiqueta">EXPLORACIÓN ESPACIAL</p>
+                <h1>ABANDONADOS,<br> PERO NO OLVIDADOS</h1>
+                <p>
+                    Descubre los equipos, vehículos y artefactos que las misiones
+                    espaciales han dejado en la Luna y Marte.
+                </p>
+                <a href="#equipment" class="boton">Comenzar exploración</a>
+            </div>
+        </section>
+
+        <!-- Introducción -->
+        <section class="introduccion">
+            <p class="etiqueta">EL LEGADO HUMANO EN EL ESPACIO</p>
+            <h2>¿Qué dejamos en otros mundos?</h2>
+            <p>
+                A lo largo de la exploración espacial, diferentes misiones han
+                enviado vehículos, sondas y módulos a otros cuerpos celestes.
+                Algunos de estos equipos permanecen en sus superficies después
+                de terminar sus misiones. SPACE LEGACY permite conocer su historia
+                y descubrir qué nos enseñan sobre la exploración espacial.
+            </p>
+        </section>
+
+        <!-- Luna -->
+        <section class="planeta" id="moon">
+            <div class="planeta-texto">
+                <p class="etiqueta">DESTINO 01</p>
+                <h2>La Luna</h2>
+                <p>
+                    Las misiones Apolo y otras misiones robóticas dejaron
+                    instrumentos, módulos y vehículos en la superficie lunar.
+                    Estos objetos forman parte de la historia de la exploración
+                    espacial.
+                </p>
+            </div>
+            <div class="planeta-imagen luna-imagen">
+                <span>🌕</span>
+            </div>
+        </section>
+
+        <!-- Marte -->
+        <section class="planeta invertido" id="mars">
+            <div class="planeta-texto">
+                <p class="etiqueta">DESTINO 02</p>
+                <h2>Marte</h2>
+                <p>
+                    Diferentes misiones han enviado módulos de aterrizaje y
+                    vehículos exploradores a Marte. Algunos dejaron de funcionar,
+                    pero sus descubrimientos siguen ayudándonos a estudiar el
+                    planeta rojo.
+                </p>
+            </div>
+            <div class="planeta-imagen marte-imagen">
+                <span>🔴</span>
+            </div>
+        </section>
+
+        <!-- Catálogo -->
+        <section class="equipos" id="equipment">
+            <p class="etiqueta">ARCHIVO ESPACIAL</p>
+            <h2>Equipos que dejaron huella</h2>
+            <p class="seccion-descripcion">
+                Selecciona un destino para conocer algunos de los equipos
+                que han participado en la exploración espacial.
+            </p>
+
+            <div class="filtros">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="luna">Luna</button>
+                <button class="filter-btn" data-filter="marte">Marte</button>
+            </div>
+
+            <div class="equipment-grid" id="equipmentGrid"></div>
+        </section>
+
+        <!-- Juego de preguntas -->
+        <section class="juego" id="juego">
+            <p class="etiqueta">PON A PRUEBA TUS CONOCIMIENTOS</p>
+            <h2>🎮 Reto espacial</h2>
+            <p class="seccion-descripcion">
+                Responde cinco preguntas y descubre cuánto sabes sobre
+                la exploración de la Luna y Marte.
+            </p>
+
+            <div class="juego-caja">
+                <div class="juego-superior">
+                    <span id="numeroPregunta">Pregunta 1 de 5</span>
+                    <span id="marcador">Puntos: 0</span>
+                </div>
+
+                <div class="barra-fondo">
+                    <div id="progreso" class="barra-progreso"></div>
+                </div>
+
+                <h3 id="pregunta">Preparando pregunta...</h3>
+
+                <div id="opciones" class="opciones"></div>
+
+                <p id="mensajeRespuesta" class="mensaje-respuesta"
+                   aria-live="polite"></p>
+
+                <button id="siguientePregunta" class="boton" hidden>
+                    Siguiente pregunta
+                </button>
+
+                <div id="resultadoJuego" class="resultado-juego" hidden>
+                    <h3>¡Misión completada!</h3>
+                    <p id="textoResultado"></p>
+                    <button id="reiniciarJuego" class="boton">
+                        Volver a jugar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Misión interactiva -->
+        <section class="mision" id="mision">
+            <p class="etiqueta">SIMULADOR DE EXPLORACIÓN</p>
+            <h2>🚀 Completa tu misión espacial</h2>
+            <p class="seccion-descripcion">
+                Eres responsable de una misión robótica a Marte.
+                Toma decisiones para intentar completar la exploración.
+            </p>
+
+            <div class="mision-caja">
+                <div id="historiaMision" aria-live="polite">
+                    <span class="mision-icono">🛰️</span>
+                    <h3>Tu misión comienza aquí</h3>
+                    <p>
+                        Una nave está lista para viajar a Marte.
+                        Debes elegir cómo preparar el equipo antes del lanzamiento.
+                    </p>
+                </div>
+
+                <div id="opcionesMision" class="opciones-mision">
+                    <button class="opcion-mision" data-decision="equipo">
+                        Revisar los instrumentos científicos
+                    </button>
+                    <button class="opcion-mision" data-decision="rapido">
+                        Lanzar rápidamente sin revisar
+                    </button>
+                </div>
+
+                <button id="reiniciarMision" class="boton boton-secundario" hidden>
+                    Reiniciar misión
+                </button>
+            </div>
+        </section>
+
+        <!-- Fuentes -->
+        <section class="fuentes" id="fuentes">
+            <p class="etiqueta">CONSULTA Y APRENDE</p>
+            <h2>Fuentes de información</h2>
+            <p>
+                Puedes consultar información sobre los planetas y las misiones
+                espaciales en los siguientes recursos oficiales de NASA.
+            </p>
+            <div class="enlaces-fuentes">
+                <a href="https://science.nasa.gov/moon/" target="_blank" rel="noopener noreferrer">
+                    Información de NASA sobre la Luna ↗
+                </a>
+                <a href="https://science.nasa.gov/mars/" target="_blank" rel="noopener noreferrer">
+                    Información de NASA sobre Marte ↗
+                </a>
+                <a href="https://science.nasa.gov/solar-system/" target="_blank" rel="noopener noreferrer">
+                    Exploración del sistema solar ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <h3>SPACE LEGACY</h3>
+        <p>Explorando el legado de las misiones espaciales.</p>
+        <p class="copyright">Proyecto educativo - NASA Space Apps Challenge 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
